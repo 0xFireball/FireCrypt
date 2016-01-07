@@ -2,7 +2,10 @@
 
 Free encryption program by 0xFireball.
 
-Create encrypted volumes and secure them.
+Create encrypted volumes and secure them with FireCrypt.
+FireCrypt offers a simple and intuitive interface to create virtual encrypted volumes encrypted with AES256.
+
+Create and mount disks on cloud storage to sync your encrypted volumes on cloud storage.
 
 
 NOTE:
