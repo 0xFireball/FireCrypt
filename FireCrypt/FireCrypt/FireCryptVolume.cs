@@ -151,6 +151,7 @@ namespace FireCrypt
 		
 		public FireCryptVolume(string location)
 		{
+			RawLocation = location;
 			string fnwoext = Path.GetFileNameWithoutExtension(RawLocation); //filenamewithout extension
 			string volN = RawLocation;
 			if (Path.GetExtension(volN)!=".FireCrypt")
