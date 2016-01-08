@@ -167,7 +167,9 @@ namespace FireCrypt
 		public FireCryptVolume()
 		{
 			string fnwoext = Path.GetFileNameWithoutExtension(RawLocation); //filenamewithout extension
-			string volN = Path.GetDirectoryName(RawLocation)+"\\"+fnwoext+".vault\\"+fnwoext+".firecrypt";
+			string volN = RawLocation;
+			if (Path.GetExtension(volN)!=".FireCrypt")
+				volN = Path.GetDirectoryName(RawLocation)+"\\"+fnwoext+".vault\\"+fnwoext+".FireCrypt";
 			VolumeLocation = volN;
 			VaultLocation = Path.GetDirectoryName(volN);
 			_unlocked = Directory.Exists(OpenVaultLocation);
