@@ -83,8 +83,9 @@ namespace FireCrypt.NewVolumeWizard.UserControls
 					finishBtn.Enabled = ValidVolume;
 					FinalVolume = fcv;
 				}
-				catch
+				catch (Exception ex)
 				{
+					MessageBox.Show(ex.ToString());
 					ValidVolume = false;
 					finishBtn.Enabled = ValidVolume;
 					MessageBox.Show("Invalid Volume selected.");

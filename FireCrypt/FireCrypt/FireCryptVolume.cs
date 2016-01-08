@@ -153,21 +153,7 @@ namespace FireCrypt
 		{
 			RawLocation = location;
 			string fnwoext = Path.GetFileNameWithoutExtension(RawLocation); //filenamewithout extension
-			string volN = Path.GetDirectoryName(RawLocation)+"\\"+fnwoext+".vault\\"+fnwoext+".firecrypt";
-			VolumeLocation = volN;
-			VaultLocation = Path.GetDirectoryName(volN);
-			_unlocked = Directory.Exists(OpenVaultLocation);
-			_metadata = File.ReadAllText(VaultLocation+"\\vault.metadata");
-			var jss = new JavaScriptSerializer();
-			MetadataValues = jss.Deserialize<Dictionary<string,string>>(_metadata);
-			UID = MetadataValues["UID"];
-			Label = MetadataValues["Label"];
-		}
-		
-		public FireCryptVolume()
-		{
-			string fnwoext = Path.GetFileNameWithoutExtension(RawLocation); //filenamewithout extension
-			string volN = Path.GetDirectoryName(RawLocation)+"\\"+fnwoext+".vault\\"+fnwoext+".firecrypt";
+			string volN = Path.GetDirectoryName((Path.GetDirectoryName(RawLocation)))+"\\"+fnwoext+".vault\\"+fnwoext+".firecrypt";
 			VolumeLocation = volN;
 			VaultLocation = Path.GetDirectoryName(volN);
 			_unlocked = Directory.Exists(OpenVaultLocation);
